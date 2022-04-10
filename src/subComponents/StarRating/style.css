@@ -1,0 +1,25 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 1rem;
+}
+.btn-star {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-star span {
+  display: flex;
+  align-items: center;
+}
+.btn-star span svg {
+  font-size: 14px;
+}
+.on-star {
+  color: rgb(255, 112, 4);
+}
+.off-star {
+  color: gray;
+}
