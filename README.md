@@ -2,7 +2,7 @@
 
 visit the site [Furns App](https://furns.netlify.app/)
 
-A Movie app list application made with React.
+A Store application made with React.
 Packages used:
 1. redux react-redux @reduxjs/toolkit
 2. axios
