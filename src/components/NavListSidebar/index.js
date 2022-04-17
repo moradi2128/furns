@@ -1,4 +1,5 @@
 // === Theme ===
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import Theme from "../../Theme/Theme";
 
@@ -18,7 +19,7 @@ export const NavLi = styled.li`
     font-size: initial;
   }
 `;
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;

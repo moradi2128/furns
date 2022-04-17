@@ -16,7 +16,7 @@ const SignUp = () => {
   const [isCheckbox, setIsCheckbox] = useState(false);
   return (
     <main>
-      <TopSection title="CREATE ACCOUNT" pathname="signup" />
+      <TopSection title="CREATE ACCOUNT" name="signup" />
       <Wrapper className="container">
         <FormContainer className="col-lg-6">
           <Form>
@@ -63,7 +63,7 @@ const SignUp = () => {
               your data in our <Link to="/">Privacy Policy.</Link>
             </p>
             <Btn type="submit" disabled={!isCheckbox && "true"}>SIGNIN</Btn>
-            <Btn href="/signهد" type="news" >
+            <Btn to="/signin" type="news" >
               ALREADY HAVE A ACCOUNT?
             </Btn>
           </Form>

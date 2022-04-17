@@ -7,7 +7,7 @@ import TopSection from "../../components/TopSection/TopSection";
 const About = () => {
   return (
     <main>
-      <TopSection title="about us" pathname="about" />
+      <TopSection title="about us" name="about" />
       <section>
         <HeaderAbout className="container">
           <h2>{aboutPageData[0].title}</h2>

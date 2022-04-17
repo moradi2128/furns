@@ -10,7 +10,7 @@ import {
 const BannerItem = ({ item }) => {
   return (
     <BannerItemContainer className="col-md-6">
-      <BannerImgWrapper href="/">
+      <BannerImgWrapper to="/shop">
         <figure>
           <BannerImg src={item.img} alt={item.title} />
         </figure>

@@ -12,13 +12,13 @@ import {
   Li,
 } from "./index";
 
-const Sort = () => {
+const Sort = ({productItem}) => {
   const [value, setValue] = useState("Relevance");
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Wrapper>
       <Left>
-        <p>Showing 18 products</p>
+        <p>Showing {productItem} products</p>
       </Left>
       <Right>
         <span>Sort by</span>

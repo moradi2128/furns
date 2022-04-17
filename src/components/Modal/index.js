@@ -58,10 +58,15 @@ export const ModalHeader = styled.header`
   padding: ${(props) => (props.modalTop === "true" ? "15px 0" : "30px 0")};
   border-bottom: 1px solid rgb(235, 235, 235);
 `;
-export const ModalTitle = styled.div``;
+export const ModalTitle = styled.div`
+  font-size: 20px;
+  color: rgb(33, 33, 33);
+  font-weight: 700;
+`;
 export const ModalHeaderContainer = styled.div`
   display: flex;
-  justify-content:${(props) => (props.modalTop === "true" ? "center" : "space-between")} ;
+  justify-content: ${(props) =>
+    props.modalTop === "true" ? "center" : "space-between"};
   align-items: center;
   padding: 0 15px;
 `;

@@ -5,17 +5,24 @@ import {
   BtnContainer,
   ControlBtn,
 } from "./index";
-const Counter = ({ parentCallback, productDetail }) => {
-  const [counter, setCounter] = useState(1);
-
+const Counter = ({
+  Counter,
+  productDetail,
+  clickDecrease,
+  clickIncrease,
+  parentCallback,
+}) => {
+  const [counter, setCounter] = useState(Counter);
   //increase counter
   const increase = () => {
-    setCounter((count) => count + 1);
+    clickIncrease();
+    setCounter(counter + 1);
     parentCallback(counter + 1);
   };
 
   //decrease counter
   const decrease = () => {
+    clickDecrease();
     counter > 1 && setCounter((count) => count - 1);
     counter > 1 && parentCallback(counter - 1);
   };

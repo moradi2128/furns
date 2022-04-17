@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // === Styled Components ===
 import {
   Card,
@@ -16,23 +17,23 @@ const NewsItem = ({ item }) => {
   return (
     <Card>
       <CardHeader>
-        <a href={item.href}>
+        <Link to={`/blog/${item.title}`}>
           <CardImgContainer>
-            <CardImg src={item.img} />
+            <CardImg src={item.img} alt={item.title} />
           </CardImgContainer>
-        </a>
+        </Link>
       </CardHeader>
       <CardBody>
         <CardTitle>
-          <a href={item.href}>{item.title}</a>
+          <Link to={`/blog/${item.title}`}>{item.title}</Link>
         </CardTitle>
         <CardAuthor>
           By
-          <a href={item.hrefAuthor}>{item.author}</a>
-          <a href={item.href}>{item.date}</a>
+          <Link to={`/blog/${item.title}`}>{item.author}</Link>
+          <Link to={`/blog/${item.title}`}>{item.date}</Link>
         </CardAuthor>
         <p>{item.description}</p>
-        <Btn href={item.href} type="news">
+        <Btn to={`/blog/${item.title}`} type="news">
           Read More
         </Btn>
       </CardBody>

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 export const OurProductsHeader = styled.div`
   text-align: center;
   h2 {
@@ -44,4 +44,8 @@ export const TabBody = styled.div`
   &.active {
     color: rgb(255, 112, 4);
   }
+`;
+export const ListProduct = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;

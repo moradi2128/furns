@@ -1,16 +1,24 @@
 import styled from "styled-components";
- 
+import { Link } from "react-router-dom";
 export const CartItemContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
   padding: 1rem;
   border-bottom: 1px solid rgb(235, 235, 235);
 `;
-export const CartImgContainer = styled.a``;
-export const CartImg = styled.img``;
+export const CartImgContainer = styled.a`
+  width: 100px;
+  height: 120px;
+  overflow: hidden;
+`;
+export const CartImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
 
-export const CartBody = styled.div``;
+export const CartBody = styled.div`
+margin-left: 1rem;
+`;
 export const ProductTitle = styled.a`
   display: block;
   font-weight: 400;
@@ -39,7 +47,7 @@ export const CartDelete = styled.div`
   color: rgb(33, 33, 33);
   font-family: Raleway;
   border-radius: 50%;
-  & svg{
+  & svg {
     width: 20px;
     height: 20px;
   }
@@ -47,4 +55,9 @@ export const CartDelete = styled.div`
     color: rgb(255, 255, 255);
     background-color: rgb(220, 53, 69);
   }
+`;
+export const CardWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;

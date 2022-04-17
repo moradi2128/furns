@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const Cart = styled.div`
   height: calc(100% - 160px);
 `;
@@ -7,9 +7,14 @@ export const ChartList = styled.div`
   overflow: auto;
   height: 100%;
 `;
-
+export const WrapperEmpty = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
 // Footer Cart
-export const CartFooter = styled.a`
+export const CartFooter = styled(Link)`
   position: absolute;
   bottom: 20px;
   left: 20px;

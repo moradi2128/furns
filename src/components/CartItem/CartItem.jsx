@@ -1,4 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, {  useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  removeFromCart,
+  decreaseCart,
+  addToCard,
+} from "../../features/products/CartSlice";
 // === Styled Components ===
 import {
   CartItemContainer,
@@ -8,37 +14,69 @@ import {
   ProductTitle,
   ProductPrice,
   CartDelete,
+  CardWrapper,
 } from "./index";
-
-// === Img ===
-import ProImg from "../../assets/images/1.jpg";
+import {
+  CounterContainer,
+  BtnContainer,
+  ControlBtn,
+  CounterOutput,
+} from "../../subComponents/counter/index";
 // === Icons ===
 import { AiOutlineClose } from "react-icons/ai";
-// === Components ===
-import Counter from "../../subComponents/counter/Counter";
 
-const CartItem = () => {
-  const [counter, setCounter] = useState(1);
-  const callback = useCallback((count) => {
-    setCounter(count);
-  }, []);
+const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const handlerDeleteCartItem = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
+  // === Counter ===
+  const [counter, setCounter] = useState(item.cartQuantity);
+  //increase counter
+  const increase = (cartItem) => {
+    dispatch(addToCard(cartItem));
+    setCounter(counter + 1);
+  };
+
+  //decrease counter
+  const decrease = (cartItem) => {
+    dispatch(decreaseCart(cartItem));
+    counter > 1 && setCounter((count) => count - 1);
+  };
   return (
     <CartItemContainer>
-      <CartImgContainer href="/">
-        <CartImg src={ProImg} alt="pro" />
+      <CartImgContainer href={`/product/${item.id}`}>
+        <CartImg src={item.image} alt={item.title} />
       </CartImgContainer>
-      <CartBody>
-        <ProductTitle href="/">
-          Josefa Queen Size Bed with Storage in Natural Teak Wood Finish
-        </ProductTitle>
-        <ProductPrice>
-          {counter} x <span>$199.0</span>
-        </ProductPrice>
-        <Counter parentCallback={callback} />
-      </CartBody>
-      <CartDelete>
-        <AiOutlineClose />
-      </CartDelete>
+      <CardWrapper>
+        <CartBody>
+          <ProductTitle href={`/product/${item.id}`}>{item.title}</ProductTitle>
+          <ProductPrice>
+            {item.cartQuantity} x <span>${item.price}</span>
+          </ProductPrice>
+          <CounterContainer>
+            <BtnContainer>
+              <ControlBtn
+                className="control__btn"
+                onClick={() => decrease(item)}
+              >
+                -
+              </ControlBtn>
+              <CounterOutput>{item.cartQuantity}</CounterOutput>
+              <ControlBtn
+                className="control__btn"
+                onClick={() => increase(item)}
+              >
+                +
+              </ControlBtn>
+            </BtnContainer>
+          </CounterContainer>
+        </CartBody>
+        <CartDelete onClick={() => handlerDeleteCartItem(item)}>
+          <AiOutlineClose />
+        </CartDelete>
+      </CardWrapper>
     </CartItemContainer>
   );
 };

@@ -1,20 +1,30 @@
 import React from "react";
+import { useSelector } from "react-redux";
 // === Styled Components ===
-import { Cart, ChartList, CartFooter, CartFooterRight } from "./index";
+import { Cart, ChartList, CartFooter, CartFooterRight,WrapperEmpty } from "./index";
 // === Components ===
 import CartItem from "../CartItem/CartItem";
-const CartModal = () => {
+import EmptyBox from "../EmptyBox/EmptyBox";
+const CartModal = ({setIsOpenCart}) => {
+  const { cartItems, cartTotalAmount } = useSelector((state) => state.cart);
   return (
     <Cart>
       <ChartList>
-        <CartItem />
-        <CartItem />
+        {cartItems.length === 0 ? (
+          <WrapperEmpty>
+            <EmptyBox></EmptyBox>
+          </WrapperEmpty>
+        ) : (
+          cartItems.map((item) => {
+            return <CartItem item={item} />;
+          })
+        )}
       </ChartList>
 
       {/* Footer Cart */}
-      <CartFooter href="/cart">
+      <CartFooter to="/cart" onClick={()=>{setIsOpenCart(false)}}>
         View Cart
-        <CartFooterRight>$100,00</CartFooterRight>
+        <CartFooterRight>${cartTotalAmount}</CartFooterRight>
       </CartFooter>
     </Cart>
   );

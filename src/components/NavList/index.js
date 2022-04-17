@@ -29,7 +29,7 @@ export const NavLi = styled.li`
     visibility: visible;
   }
 `;
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   color: white;
   text-transform: capitalize;
   display: flex;

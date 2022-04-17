@@ -38,8 +38,10 @@ import CartModal from "../CartModal/CartModal";
 import SecMenu from "../SecMenu/SecMenu";
 import CartCounterShow from "../../subComponents/CartCounterShow/CartCounterShow";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { cartItems } = useSelector((state) => state.cart);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpeUser, setIsOpenUser] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -80,16 +82,16 @@ const Header = () => {
                 )}
                 <UlUser isOpeUser={isOpeUser}>
                   <LIUser>
-                    <Link to="/signin">Sign In</Link>
+                    <Link to="/signin" onClick={()=>setIsOpenUser(false)}>Sign In</Link>
                   </LIUser>
                   <LIUser>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/cart" onClick={()=>setIsOpenUser(false)}>Cart</Link>
                   </LIUser>
                   <LIUser>
-                    <Link to="/wishlist">Wishlist</Link>
+                    <Link to="/wishlist" onClick={()=>setIsOpenUser(false)}>Wishlist</Link>
                   </LIUser>
                   <LIUser>
-                    <Link to="/Compare">Compare</Link>
+                    <Link to="/Compare" onClick={()=>setIsOpenUser(false)}>Compare</Link>
                   </LIUser>
                 </UlUser>
               </IconContainer>
@@ -98,7 +100,7 @@ const Header = () => {
               {matchesLg ? (
                 <CartContainer onClick={() => setIsOpenCart(true)}>
                   <AiOutlineShopping />
-                  <Badge>0</Badge>
+                  <Badge>{cartItems.length}</Badge>
                 </CartContainer>
               ) : (
                 <AiOutlineSetting />
@@ -120,7 +122,7 @@ const Header = () => {
         <FormSearch />
       </Modal>
       <Modal title="Cart" setIsOpen={setIsOpenCart} isOpen={isOpenCart}>
-        <CartModal />
+        <CartModal setIsOpenCart={setIsOpenCart} />
       </Modal>
 
       {/* === secund Menu === */}

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-
+import {Link} from "react-router-dom"
 
   // === Footer Header ===
   export const Footer = styled.div`
     left: 0px;
     bottom: 0px;
-    z-index: 99;
+    z-index: 999;
     width: 100%;
     position: fixed;
     box-shadow: rgb(0 0 0 / 30%) 0px 0px 10px 0px;
@@ -17,7 +17,7 @@ import styled from "styled-components";
     align-items: center;
     justify-content: space-between;
   `;
-  export const FooterItem = styled.button`
+  export const FooterItem = styled(Link)`
     position: relative;
     cursor: pointer;
     border: none;

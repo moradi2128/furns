@@ -26,8 +26,8 @@ export const navItemData = [
     id: 0,
     title: "home",
     subMenu: [
-      { id: 0, title: "Hone1", href: "/" },
-      { id: 1, title: "Hone2", href: "/" },
+      { id: 0, title: "Home1", href: "/" },
+      { id: 1, title: "Home2", href: "/" },
     ],
   },
   {
@@ -39,26 +39,26 @@ export const navItemData = [
     id: 2,
     title: "Home Furniture",
     subMenu: [
-      { id: 0, title: "Bedroom", href: "/" },
-      { id: 1, title: "Dining", href: "/" },
-      { id: 2, title: "Living", href: "/" },
+      { id: 0, title: "Bedroom", href: "/shop" },
+      { id: 1, title: "Dining", href: "/shop" },
+      { id: 2, title: "Living", href: "/shop" },
     ],
   },
   {
     id: 3,
     title: "Office Furniture",
     subMenu: [
-      { id: 0, title: "Lounge", href: "/" },
-      { id: 1, title: "Office Chair", href: "/" },
-      { id: 2, title: "Office Table", href: "/" },
+      { id: 0, title: "Lounge", href: "/shop" },
+      { id: 1, title: "Office Chair", href: "/shop" },
+      { id: 2, title: "Office Table", href: "/shop" },
     ],
   },
   {
     id: 4,
     title: "Hospital Furniture",
     subMenu: [
-      { id: 0, title: "Hospital Bed", href: "/" },
-      { id: 1, title: "Hospital Utility", href: "/" },
+      { id: 0, title: "Hospital Bed", href: "/shop" },
+      { id: 1, title: "Hospital Utility", href: "/shop" },
     ],
   },
   {

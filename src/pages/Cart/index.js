@@ -5,7 +5,7 @@ export const ListHead = styled.div`
   ul {
     display: grid;
     grid-template-columns: ${(props) =>
-      props.wishlist ? "1fr 2fr 1fr 1fr 1fr" : "1fr 2fr 1fr 1fr 1fr 1fr"};
+      props.wishlist ? "0.5fr 2fr 1fr 1fr 1fr" : "0.5fr 2fr 1fr 1fr 1fr 1fr"};
     text-align: center;
   }
   li {
@@ -29,18 +29,26 @@ export const ListBody = styled.div`
   }
   ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: space-around;
     display: flex;
     align-items: center;
     text-align: center;
     padding: 1rem 0;
     border-bottom: 1px solid rgb(235, 235, 235);
+    .cartItem {
+      border-bottom: 1px solid #ebebeb;
+      width: 100%;
+      padding: 1rem 0;
+    }
+    .cartItem:last-child {
+      border-bottom: none;
+    }
     :last-child {
       border-bottom: 0;
     }
+
     @media screen and (min-width: 425px) {
-      flex-direction: row;
     }
     .description-product {
       width: 100%;
@@ -61,16 +69,29 @@ export const ListBody = styled.div`
       }
     }
   }
+
   li {
-    img {
-      max-width: 130px;
-      max-height: 150px;
-      overflow: hidden;
-      object-fit: cover;
+    .img-container {
+      width: 111px;
+      height: 111px;
       display: block;
       margin: auto;
+      margin-bottom: 0.5rem;
+    }
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      overflow: hidden;
+    }
+    a {
+      color: rgb(33, 33, 33);
+      font-weight: 600;
     }
   }
+
   .action-btn {
     justify-content: center;
     display: flex;
@@ -108,16 +129,28 @@ export const ListBody = styled.div`
   }
   @media screen and (min-width: 768px) {
     .tr-footer {
-      justify-content: end;
-      margin-right: 35px;
+      align-items: end;
+      margin-right: 60px;
     }
   }
   @media screen and (min-width: 992px) {
     border-top: none;
+    .img-container {
+      margin: 0 !important;
+      margin-left: 0.5rem !important;
+    }
     ul {
-      display: grid;
+      display: ${(props) => (props.wishlist ? "grid" : "flex")};
       grid-template-columns: ${(props) =>
-        props.wishlist ? "1fr 2fr 1fr 1fr 1fr" : "1fr 2fr 1fr 1fr 1fr 1fr"};
+        props.wishlist ? "0.5fr 2fr 1fr 1fr 1fr" : "1fr 2fr 1fr 1fr 1fr 1fr"};
+      flex-direction: column;
+      li {
+        display: ${(props) => (props.wishlist ? "block" : "grid")};
+        ${(props) =>
+          !props.wishlist &&
+          "grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr"};
+        ${(props) => !props.wishlist && "align-items: center"}
+      }
     }
   }
 `;

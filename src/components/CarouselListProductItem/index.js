@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Item = styled.a`
+export const Item = styled(Link)`
   flex-direction: column;
   align-items: center;
 

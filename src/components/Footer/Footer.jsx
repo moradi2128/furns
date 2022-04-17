@@ -37,29 +37,29 @@ const Footer = () => {
             </p>
             <SocialMedia>
               <SocialMediaItem>
-                <a href="">
+                <Link to="/">
                   <BsFacebook />
-                </a>
+                </Link>
               </SocialMediaItem>
               <SocialMediaItem>
-                <a href="">
+                <Link to="/">
                   <BsTwitter />
-                </a>
+                </Link>
               </SocialMediaItem>
               <SocialMediaItem>
-                <a href="">
+                <Link to="/">
                   <BsLinkedin />
-                </a>
+                </Link>
               </SocialMediaItem>
               <SocialMediaItem>
-                <a href="">
+                <Link to="/">
                   <BsYoutube />
-                </a>
+                </Link>
               </SocialMediaItem>
               <SocialMediaItem>
-                <a href="">
+                <Link to="/">
                   <BsPinterest />
-                </a>
+                </Link>
               </SocialMediaItem>
             </SocialMedia>
           </FooterItem>
@@ -70,16 +70,16 @@ const Footer = () => {
                 <Link to="/about">About Us</Link>
               </Li>
               <Li>
-                <a href="">Manufactures</a>
+                <Link to="/">Manufactures</Link>
               </Li>
               <Li>
-                <a href="">Tracking Order</a>
+                <Link to="/">Tracking Order</Link>
               </Li>
               <Li>
-                <a href="">Privacy & Policy</a>
+                <Link to="/">Privacy & Policy</Link>
               </Li>
               <Li>
-                <a href="">Terms & Conditions</a>
+                <Link to="/">Terms & Conditions</Link>
               </Li>
             </Ul>
           </FooterItem>
@@ -116,9 +116,9 @@ const Footer = () => {
         <p class="sc-eHfRjS cJkIkW">
           © 2021, Furns. Made With
           <cite title="Source Title">Source Title</cite>
-          <a class="company-name" href="https://hasthemes.com/">
+          <Link class="company-name" to="https://hasthemes.com/">
             HasThemes.
-          </a>
+          </Link>
         </p>
       </SubFooter>
     </FooterWrapper>

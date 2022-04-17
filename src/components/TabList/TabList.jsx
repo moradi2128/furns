@@ -4,11 +4,13 @@ import { NavTabs, NavItem, TabContent } from "./index.js";
 
 const TabList = ({ children }) => {
   const [isSelect, setIsSelect] = useState(0);
+
   return (
     <div>
       <NavTabs>
         {children.map((i, index) => {
           return (
+            i !== undefined &&
             i.type === "li" && (
               <NavItem
                 key={index}
@@ -25,6 +27,7 @@ const TabList = ({ children }) => {
       <TabContent>
         {children.map((i, index) => {
           return (
+            i !== undefined &&
             i.type !== "li" && (
               <div key={index}>
                 {i.props.id == isSelect && i.props.children}

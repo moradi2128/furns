@@ -1,10 +1,11 @@
 import React from "react";
-import {Item} from "./index";
+import { Item } from "./index";
 
-const CarouselListProductItem = ({ children, title, href }) => {
+const CarouselListProductItem = ({ img, title, to }) => {
   return (
-    <Item href={href}>
-      {children} <h4>{title}</h4>
+    <Item to={to}>
+      <img src={img} alt={title} />
+      <h4>{title}</h4>
     </Item>
   );
 };

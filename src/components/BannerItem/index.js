@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const BannerItemContainer = styled.div`
   margin-top: 30px;
   @media screen and (min-width: 768px) {
@@ -12,7 +12,7 @@ export const BannerItemContainer = styled.div`
     }
   }
 `;
-export const BannerImgWrapper = styled.a`
+export const BannerImgWrapper = styled(Link)`
   display: block;
   overflow: hidden;
   position: relative;

@@ -4,30 +4,28 @@
   background: #fff;
 
   /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
-
   background-size: cover;
   background-position: center;
 }
-
-.swiper-slide img {
+.productDetails .swiper-slide {
+  position: relative;
+}
+.productDetails .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  position: absolute;
+  inset: 0;
 }
-
+.productDetails .swiper-slide figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 .mySwipeProduct {
   width: 100%;
   height: 300px;
@@ -56,12 +54,6 @@
   opacity: 1;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 /* === Active slide  === */
 .mySwiper .swiper-slide-thumb-active {
   border: 1px solid rgb(255, 112, 4);
@@ -131,4 +123,10 @@
 .productDetails.swiper:hover .swiper-button-next {
   visibility: visible;
   transform: translateX(0px) !important ;
+}
+
+@media screen and (max-width: 767px) {
+  .productDetails .swiper-slide figure {
+    height: 300px;
+  }
 }

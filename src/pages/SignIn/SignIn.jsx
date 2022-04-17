@@ -8,7 +8,7 @@ import { Wrapper, Form, FormContainer,BtnContainer } from "./index";
 const SignIn = () => {
   return (
     <main>
-      <TopSection title="sign in" pathname="signin" />
+      <TopSection title="sign in" name="signin" />
       <Wrapper className="container">
         <FormContainer className="col-lg-6">
           <Form>
@@ -22,7 +22,7 @@ const SignIn = () => {
             </div>
             <Btn type="submit">SIGNIN</Btn>
             <BtnContainer>
-              <Btn href="/signup" type="news">
+              <Btn to="/signup" type="news">
                 CREATE A ACCOUNT
               </Btn>
               <Btn to="/">FORGET PASSWORD</Btn>

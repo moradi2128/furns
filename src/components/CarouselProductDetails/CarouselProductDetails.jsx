@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -26,31 +26,43 @@ const CarouselProductDetails = ({ img }) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwipeProduct2 productDetails"
       >
-        {img.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <img src={item} />
-            </SwiperSlide>
-          );
-        })}
+        {Array.isArray(img) ? (
+          img.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <figure>
+                  <img src={item} alt="" />
+                </figure>
+              </SwiperSlide>
+            );
+          })
+        ) : (
+          <SwiperSlide>
+            <figure>
+              <img src={img} alt="" />
+            </figure>
+          </SwiperSlide>
+        )}
       </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwipeProduct productDetails"
-      >
-        {img.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <img src={item} />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      {Array.isArray(img) && (
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={10}
+          slidesPerView={4}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwipeProduct productDetails"
+        >
+          {img.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={item} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      )}
     </>
   );
 };

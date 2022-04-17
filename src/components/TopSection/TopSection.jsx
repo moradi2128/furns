@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Section, Li } from "./index";
-const TopSection = ({ title, pathname }) => {
+const TopSection = ({ title, name }) => {
   return (
     <Section>
       <div className="container">
@@ -11,7 +11,7 @@ const TopSection = ({ title, pathname }) => {
             <Link to="/">HOME</Link>
           </Li>
           <Li>
-            <span>{pathname}</span>
+            <span>{name}</span>
           </Li>
         </ul>
       </div>

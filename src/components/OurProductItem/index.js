@@ -1,18 +1,23 @@
 // === Styled Components ===
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const Card = styled.div`
   padding: 0 0.5rem;
   transition: all 0.2s ease;
+  .thumb{
+    transition: all 0.2s ease;
+  }
   &:hover .thumb-hover,
   &:hover .thumb {
-    transform: rotate(5deg) scale(1.1);
+    transition: all 0.2s ease;
+    transform: rotate(3deg) scale(1.1);
     opacity: 1;
   }
   &:hover .toCartActionItem:nth-child(2),&:hover .toCartActionItem:nth-child(3),&:hover .show-btn{
     visibility: visible;
     opacity: 1;
     transform: translateY(0px);
+    
 }}
 `;
 export const CardContainer = styled.div`
@@ -32,21 +37,17 @@ export const CardImgContainer = styled.div`
   margin: 0px;
   width: 100%;
 `;
-export const CardImgLink = styled.a`
+export const CardImgLink = styled(Link)`
   overflow: hidden;
 `;
 export const ImgThumb = styled.div`
-z-index: 1;
-max-width: 100%;
-}
+  z-index: 1;
+  max-width: 100%;
+  width: 210px;
+  height: 247px;
 `;
 
 export const Img = styled.img`
-  inset: 0px;
-  box-sizing: border-box;
-  padding: 0px;
-  border: none;
-  margin: auto;
   display: block;
   width: 100%;
   height: 100%;
@@ -54,10 +55,7 @@ export const Img = styled.img`
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
-  filter: none;
-  background-size: cover;
-  background-image: none;
-  background-position: 0% 0%;
+  object-fit: contain;
 `;
 export const ImgThumbHover = styled.div`
   position: absolute;
@@ -71,7 +69,7 @@ export const CardBody = styled.div`
   margin: 0.8rem 0;
   text-align: center;
 `;
-export const CardBodyTitle = styled.a`
+export const CardBodyTitle = styled(Link)`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -129,6 +127,9 @@ export const IconContainer = styled.div`
     color: black;
     border-radius: 50%;
   }
+  &.toCartActionItem:hover div{
+    visibility: visible;
+  }
   &.toCartActionItem:hover  {
     background: rgb(255, 112, 4);
     color: white !important; 
@@ -170,4 +171,28 @@ export const BtnContainer = styled.div`
   transform: translateY(20px);
   visibility: hidden;
   opacity: 0;
+`;
+export const IconTooltip = styled.div`
+  visibility: hidden;
+  position: absolute;
+  display: block;
+  white-space: nowrap;
+  right: 46px;
+  background: black;
+  color: white;
+  padding: 4px 9px;
+  border-radius: 3px;
+  font-size: small;
+  font-weight: 400;
+  :before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    right: -3px;
+    top: 9px;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
 `;

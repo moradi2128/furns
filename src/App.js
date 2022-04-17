@@ -1,5 +1,7 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 // === Components ===
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -19,19 +21,20 @@ function App() {
   return (
     <>
       <Router>
+        <ToastContainer />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/blog/:id" element={<BlogDetails />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/about" component={About} />
+          <Route path="/Shop" component={Shop} />
+          <Route path="/product/:id" component={ProductDetails} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/wishlist" component={Wishlist} />
+          <Route path="/blog/:id" component={BlogDetails} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
         <Footer />
       </Router>
     </>

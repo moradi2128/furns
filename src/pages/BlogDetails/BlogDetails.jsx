@@ -17,7 +17,7 @@ const BlogDetails = () => {
     <main>
       <TopSection
         title="UT ENIM ADMINIM VENIAM, QUIS NOSTRUD"
-        pathname="UT ENIM ADMINIM VENIAM, QUIS NOSTRUD"
+        name="UT ENIM ADMINIM VENIAM, QUIS NOSTRUD"
       />
       <article className="container">
         <div className="m-auto col-lg-9">

@@ -138,6 +138,14 @@ p {
     max-width: 75%;
   }
 }
+.Toastify__toast-container--top-right {
+  top: 4rem !important;
+}
+@media (min-width: 1024px) {
+  .Toastify__toast-container--top-right {
+    top: 1rem !important;
+  }
+}
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
