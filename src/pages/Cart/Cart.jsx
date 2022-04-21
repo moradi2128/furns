@@ -93,7 +93,7 @@ const Cart = () => {
                               to={`/product/${item.id}`}
                               className="img-container"
                             >
-                              <img src={item.image} alt={item.title} />
+                              <img src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
                             </Link>
                           </div>
                           <div className="description-product">
@@ -149,7 +149,7 @@ const Cart = () => {
                               to={`/product/${item.id}`}
                               className="img-container"
                             >
-                              <img src={item.image} alt={item.title} />
+                              <img src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
                             </Link>
                           </div>
                           <div>
@@ -165,7 +165,7 @@ const Cart = () => {
                           </div>
                           <div>${item.cartQuantity * item.price}</div>
                           <div className="action-btn">
-                            <Link to="/">
+                            <Link to={`/product/${item.id}`}>
                               <FiEdit />
                             </Link>
                             <button

@@ -20,6 +20,7 @@ import Loading from "../../subComponents/Loading/Loading";
 import {
   fetchAsyncProductDetail,
   removeFetchAsyncProduct,
+  addProductItem
 } from "../../features/products/ProductsSlice";
 
 import ProductDescription from "../../components/ProductDescription/ProductDescription";
@@ -29,30 +30,30 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const { ItemsDetail, statusDetail } = useSelector((state) => state.products);
   useEffect(() => {
-    dispatch(fetchAsyncProductDetail(id));
+    // dispatch(fetchAsyncProductDetail(id));
+    dispatch(addProductItem(id))
     return () => {
       dispatch(removeFetchAsyncProduct());
     };
   }, [dispatch, id]);
-
   return (
     <main>
       {statusDetail !== "success" ? (
         <Loading />
       ) : (
         <>
-          <TopSection title={ItemsDetail.title} name={ItemsDetail.title} />
+          <TopSection title={ItemsDetail[0].title} name={ItemsDetail[0].title} />
           <section>
             <Wrapper className="container">
-              <ProductDescription ItemsDetail={ItemsDetail} />
+              <ProductDescription ItemsDetail={ItemsDetail[0]} />
               <TabList>
                 {/* Tab Item */}
                 <li id="0">Description</li>
-                {ItemsDetail.info && <li id="1">Additional Info</li>}
+                {ItemsDetail[0].info && <li id="1">Additional Info</li>}
                 <li id="2">Reviews</li>
                 {/* Tab List Item */}
-                <div id="0">{ItemsDetail.description}</div>
-                {ItemsDetail.info && (
+                <div id="0">{ItemsDetail[0].description}</div>
+                {ItemsDetail[0].info && (
                   <div id="1">
                     <ul>
                       <InfoItem>

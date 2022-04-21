@@ -68,7 +68,7 @@ const Wishlist = () => {
                                 to={`/product/${item.id}`}
                                 className="img-container"
                               >
-                                <img src={item.image} alt={item.title} />
+                                <img src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
                               </Link>
                             </li>
                             <div className="description-product">
@@ -110,7 +110,7 @@ const Wishlist = () => {
                             to={`/product/${item.id}`}
                             className="img-container"
                           >
-                            <img src={item.image} alt={item.title} />
+                            <img src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
                           </Link>
                         </li>
                         <li>

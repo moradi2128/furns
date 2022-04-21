@@ -48,7 +48,10 @@ export const ListBody = styled.div`
       border-bottom: 0;
     }
 
-    @media screen and (min-width: 425px) {
+    @media (min-width: 576px) and (max-width: 991px) {
+      .cartItem {
+        display: flex;
+      }
     }
     .description-product {
       width: 100%;

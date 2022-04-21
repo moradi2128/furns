@@ -82,7 +82,6 @@ const cartSlice = createSlice({
       state.cartTotalAmount = total.toFixed(2);
     },
     addToCartCounter(state, action) {
-      console.log(action);
       const cartIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );

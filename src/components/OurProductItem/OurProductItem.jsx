@@ -10,6 +10,7 @@ import {
   addToCompare,
   removeFromCompare,
 } from "../../features/products/CompareSlice";
+import { addQuickViewItem } from "../../features/products/QuickViewSlice";
 // === Styled Components ===
 import {
   Card,
@@ -40,12 +41,13 @@ import BadgeDiscount from "../../subComponents/BadgeDiscount/BadgeDiscount";
 import BtnCart from "../../subComponents/BtnCart/BtnCart";
 
 const OurProductItem = ({ item }) => {
+  const dispatch = useDispatch();
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const dispatch = useDispatch();
 
   const [isHeart, setIsHeart] = useState(false);
   const [isCompare, setIsCompare] = useState(false);
+  const [isQuickView, setIsQuickView] = useState(false);
   // === Media Query 768 px ===
   const [matchesM, setMatchesM] = useState(
     window.matchMedia("(min-width: 768px)").matches
@@ -105,6 +107,10 @@ const OurProductItem = ({ item }) => {
       setIsCompare(true);
     }
   }, []);
+  // === Add to Quick View ===
+  const handlerAddToQuickView = (productItem) => {
+    dispatch(addQuickViewItem(productItem));
+  };
   return (
     <Card className="col-6 col-md-4 col-lg-3" key={item.id}>
       <CardContainer>
@@ -120,7 +126,9 @@ const OurProductItem = ({ item }) => {
                     className="toCartActionItem"
                     onClick={() => setIsHeart(!isHeart)}
                   >
-                    <IconTooltip>{isHeart ? "Remove" : "Add"} to Wishlist</IconTooltip>
+                    <IconTooltip>
+                      {isHeart ? "Remove" : "Add"} to Wishlist
+                    </IconTooltip>
                     <AiOutlineHeart
                       className={isHeart && "vis-hide"}
                       onClick={() => handlerAddToWishlist(item)}
@@ -130,7 +138,10 @@ const OurProductItem = ({ item }) => {
                       onClick={() => handlerRemoveFromWishlist(item)}
                     />
                   </IconContainer>
-                  <IconContainer className="toCartActionItem">
+                  <IconContainer
+                    className="toCartActionItem"
+                    onClick={() => handlerAddToQuickView(item)}
+                  >
                     <IconTooltip>Quick View</IconTooltip>
                     <MdZoomOutMap />
                   </IconContainer>
@@ -181,7 +192,9 @@ const OurProductItem = ({ item }) => {
                 <BadgeDiscount stockOut>STOCK OUT</BadgeDiscount>
               )}
               <ImgThumb className="thumb">
-                <Img src={item.image} />
+                <Img
+                  src={Array.isArray(item.image) ? item.image[0] : item.image}
+                />
               </ImgThumb>
               {item.imgHover && (
                 <ImgThumbHover className="thumb-hover">
@@ -211,7 +224,7 @@ const OurProductItem = ({ item }) => {
                   onClick={() => handlerRemoveFromWishlist(item)}
                 />
               </IconContainer>
-              <MdZoomOutMap />
+              <MdZoomOutMap onClick={() => handlerAddToQuickView(item)} />
               <IconContainer onClick={() => setIsCompare(!isCompare)}>
                 <BiGitCompare
                   className={isCompare && "vis-hide"}

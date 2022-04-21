@@ -17,13 +17,18 @@ export const CartImg = styled.img`
 `;
 
 export const CartBody = styled.div`
-margin-left: 1rem;
+  margin-left: 1rem;
 `;
 export const ProductTitle = styled.a`
   display: block;
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 1rem;
+
+  max-width: 210px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 export const ProductPrice = styled.p`
   & span {
@@ -59,5 +64,5 @@ export const CartDelete = styled.div`
 export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 72%;
 `;

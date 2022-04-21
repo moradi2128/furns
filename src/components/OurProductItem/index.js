@@ -11,7 +11,7 @@ export const Card = styled.div`
   &:hover .thumb {
     transition: all 0.2s ease;
     transform: rotate(3deg) scale(1.1);
-    opacity: 1;
+    opacity: 1 !important;
   }
   &:hover .toCartActionItem:nth-child(2),&:hover .toCartActionItem:nth-child(3),&:hover .show-btn{
     visibility: visible;
@@ -39,12 +39,11 @@ export const CardImgContainer = styled.div`
 `;
 export const CardImgLink = styled(Link)`
   overflow: hidden;
-`;
-export const ImgThumb = styled.div`
-  z-index: 1;
-  max-width: 100%;
   width: 210px;
   height: 247px;
+`;
+export const ImgThumb = styled.div`
+
 `;
 
 export const Img = styled.img`

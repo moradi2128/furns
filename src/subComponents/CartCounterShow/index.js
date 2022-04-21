@@ -7,7 +7,7 @@ export const Btn = styled.button`
   right: 0px;
   padding: 15px;
   display: flex;
-  gap:0.2rem;
+  gap: 0.2rem;
   z-index: 999;
   position: fixed;
   align-items: center;
@@ -18,10 +18,9 @@ export const Btn = styled.button`
   box-shadow: rgb(0 0 0 / 75%) 0px 0px 16px -1px;
   background-color: rgb(47, 51, 58);
   font-weight: 600;
-  svg{
-      font-size:x-large;
-      color: rgb(255, 112, 4);
-      
+  svg {
+    font-size: x-large;
+    color: rgb(255, 112, 4);
   }
 `;
 export const CartItem = styled.span``;

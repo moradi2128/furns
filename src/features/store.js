@@ -3,6 +3,7 @@ import CartReducer from "./products/CartSlice";
 import productsReducer from "./products/ProductsSlice";
 import WishlistReducer from "./products/WishlistSlice";
 import CompareReducer from "./products/CompareSlice";
+import quickViewItemReducer from "./products/QuickViewSlice";
 export const store = configureStore(
   {
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore(
       cart: CartReducer,
       wishlist: WishlistReducer,
       compare: CompareReducer,
+      quickView: quickViewItemReducer,
     },
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ /

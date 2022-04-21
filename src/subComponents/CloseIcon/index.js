@@ -1,8 +1,9 @@
 import styled from "styled-components";
-export const CloseIcon = styled.span`
+
+export const CloseIconContainer = styled.span`
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: ${(props) => (props.ModalQuickView ? "15px" : "20px")};
+  height: ${(props) => (props.ModalQuickView ? "15px" : "20px")};
   cursor: pointer;
   &:before,
   &:after {
@@ -12,7 +13,8 @@ export const CloseIcon = styled.span`
     width: 2px;
     height: 100%;
     right: 50%;
-    background: ${(props) => props.theme.colors.colorPrimary};
+    background: ${(props) =>
+      props.ModalQuickView ? "rgb(255, 255, 255)" : "rgb(255, 112, 4)"};
   }
   &:after {
     transform: rotate(-45deg);

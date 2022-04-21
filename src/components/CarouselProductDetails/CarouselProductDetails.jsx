@@ -15,6 +15,7 @@ const CarouselProductDetails = ({ img }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
+    
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",

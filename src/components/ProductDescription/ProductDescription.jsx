@@ -169,9 +169,17 @@ const ProductDescription = ({ ItemsDetail }) => {
               </ControlBtn>
             </BtnContainer>
           </CounterContainer>
+          {(ItemsDetail.stockOut ? (
+          <BtnCart stockOut>
+            {/* <HiShoppingCart /> */}
+            Out of Stock
+          </BtnCart>
+          ) : (
           <BtnCart click={() => handlerAddToCart(ItemsDetail, counter)}>
             Add to Cart
           </BtnCart>
+          ))}
+      
         </AddContainer>
         <WishlistCompareContainer>
           <WishlistCompare onClick={() => setIsWishlist(!isWishlist)}>

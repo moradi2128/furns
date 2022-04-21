@@ -1,7 +1,7 @@
 import React from "react";
-import { CloseIcon } from "./index";
-const CloseIcon = () => {
-  return <CloseIcon />;
+import { CloseIconContainer } from "./index";
+const CloseIcon = ({ModalQuickView}) => {
+  return <CloseIconContainer ModalQuickView={ModalQuickView}/>;
 };
 
 export default CloseIcon;

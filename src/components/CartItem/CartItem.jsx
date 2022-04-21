@@ -47,7 +47,7 @@ const CartItem = ({ item }) => {
   return (
     <CartItemContainer>
       <CartImgContainer href={`/product/${item.id}`}>
-        <CartImg src={item.image} alt={item.title} />
+        <CartImg src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
       </CartImgContainer>
       <CardWrapper>
         <CartBody>

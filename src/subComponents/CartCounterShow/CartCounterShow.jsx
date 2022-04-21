@@ -10,6 +10,7 @@ const CartCounterShow = ({ setIsOpenCart }) => {
   useEffect(() => {
     dispatch(getTotal());
   }, [cart, dispatch]);
+
   return (
     <Btn onClick={() => setIsOpenCart(true)}>
       <FiShoppingBag />
