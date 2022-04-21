@@ -8,7 +8,7 @@ Packages used:
 2. axios
 3. react-router-dom
 4. styled-components
-5.swiperjs
+5. swiperjs
 
 ## Overview
  A shopping website by receiving information from api fake
