@@ -13,7 +13,7 @@ export const BtnContainer = styled.button`
   border: 0px;
   transition: all 0.4s ease 0s;
   font-size: 12px;
-  font-family: Raleway;
+  font-family: Raleway,"Montserrat", sans-serif;
   font-weight: 600;
   color: ${(props) =>
     props.type === "btnLg" ? "rgb(47, 51, 58)" : props.theme.colors.colorWhite};

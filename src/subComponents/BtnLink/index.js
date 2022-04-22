@@ -9,7 +9,7 @@ export const BtnContainer = styled(Link)`
   border: 0px;
   transition: all 0.4s ease 0s;
   font-size: 16px;
-  font-family: Raleway;
+  font-family: Raleway,"Montserrat", sans-serif;
   font-weight: 600;
   color: rgb(255, 255, 255);
   background-color: rgb(255, 112, 4);

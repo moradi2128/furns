@@ -22,7 +22,14 @@ export const ListHead = styled.div`
 `;
 export const ListBody = styled.div`
   border: 1px solid rgb(235, 235, 235);
-
+  & .wishlist {
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    padding-bottom: 1rem;
+  }
+  & .wishlist:last-child {
+    border-bottom: none;
+  }
   .description-product-title {
     max-width: 255px;
     display: inline-block;

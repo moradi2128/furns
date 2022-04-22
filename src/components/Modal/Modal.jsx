@@ -20,7 +20,7 @@ const Modal = ({ title, isOpen, setIsOpen, children, modalTop }) => {
         <ModalHeader modalTop={modalTop}>
           <ModalHeaderContainer modalTop={modalTop}>
             <ModalTitle>{title}</ModalTitle>
-            <CloseIcon onClick={() => setIsOpen(false)} />
+            <CloseIcon click={() => setIsOpen(false)} />
           </ModalHeaderContainer>
         </ModalHeader>
         {children}

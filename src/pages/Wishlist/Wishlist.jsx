@@ -62,15 +62,15 @@ const Wishlist = () => {
                     <ul>
                       {wishlistItems.map((item) => {
                         return (
-                          <li key={item.id}>
-                            <li>
+                          <li key={item.id} className="wishlist">
+                            <div>
                               <Link
                                 to={`/product/${item.id}`}
                                 className="img-container"
                               >
                                 <img src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
                               </Link>
-                            </li>
+                            </div>
                             <div className="description-product">
                               <li>
                                 <Link

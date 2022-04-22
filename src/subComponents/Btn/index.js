@@ -5,13 +5,13 @@ export const BtnContainer = styled(Link)`
   margin-top: 10px;
   display: inline-flex;
   text-align: center;
-  padding: ${(props => props.type === "news" ? "15px 25px" : "17px 36px")};
+  padding: ${(props) => (props.type === "news" ? "15px 25px" : "17px 36px")};
   border-radius: 0;
   line-height: 1;
   border: 0px;
   transition: all 0.4s ease 0s;
   font-size: 15px;
-  font-family: Raleway;
+  font-family: Raleway, "Montserrat", sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.colorWhite};
   background-color: ${(props) =>

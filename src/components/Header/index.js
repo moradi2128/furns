@@ -27,6 +27,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
 `;
 export const Logo = styled.div`
+  margin-left: 2rem;
   max-width: 90px;
   display: flex;
   align-items: center;

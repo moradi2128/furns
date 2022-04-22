@@ -114,10 +114,9 @@ const Footer = () => {
       </div>
       <SubFooter>
         <p class="sc-eHfRjS cJkIkW">
-          © 2021, Furns. Made With
-          <cite title="Source Title">Source Title</cite>
-          <Link class="company-name" to="https://hasthemes.com/">
-            HasThemes.
+          © 2021
+          <Link class="company-name" to="https://github.com/moradi2128">
+            GitHub
           </Link>
         </p>
       </SubFooter>

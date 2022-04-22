@@ -16,8 +16,9 @@ export const Wrapper = styled.div`
     font-weight: 600;
   }
   @media screen and (max-width: 576px) {
+    padding:3rem 0;
     h2 {
-      font-size: 17px;
+      font-size: 14px;
     }
   }
 `;
