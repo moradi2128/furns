@@ -113,7 +113,7 @@ const Header = () => {
       {/* Modal */}
       {!matchesLg ? (
         <Modal title="FURNS" setIsOpen={setIsOpen} isOpen={isOpen}>
-          <NavListSidebar />
+          <NavListSidebar setIsOpen={setIsOpen}/>
         </Modal>
       ) : (
         <NavList />

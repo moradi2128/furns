@@ -15,7 +15,6 @@ const CarouselProductDetails = ({ img }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
-    
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
@@ -39,8 +38,8 @@ const CarouselProductDetails = ({ img }) => {
           })
         ) : (
           <SwiperSlide>
-            <figure>
-              <img src={img} alt="" />
+            <figure className="w-unset">
+              <img src={img} alt="" className="w-unset" />
             </figure>
           </SwiperSlide>
         )}
@@ -48,7 +47,7 @@ const CarouselProductDetails = ({ img }) => {
       {Array.isArray(img) && (
         <Swiper
           onSwiper={setThumbsSwiper}
-          spaceBetween={10}
+          // spaceBetween={5}
           slidesPerView={4}
           freeMode={true}
           watchSlidesProgress={true}

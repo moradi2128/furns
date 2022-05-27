@@ -14,7 +14,7 @@ export const NavItem = styled.li`
   padding-bottom: 15px;
   color: rgb(33, 33, 33);
   transition: all 0.4s ease 0s;
-  font-family: Raleway;
+  font-family: Raleway, "Montserrat", sans-serif;
   font-weight: 600;
   transition: all 0.3s ease;
   :hover:before {
@@ -22,7 +22,7 @@ export const NavItem = styled.li`
   }
   :before {
     ${(props) =>
-      props.isSelect == props.id && "background-color:rgb(255, 112, 4)"};
+      props.isSelect === props.id && "background-color:rgb(255, 112, 4)"};
     left: 0px;
     right: 0px;
     height: 2px;

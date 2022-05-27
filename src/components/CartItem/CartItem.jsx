@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   removeFromCart,
@@ -25,7 +25,7 @@ import {
 // === Icons ===
 import { AiOutlineClose } from "react-icons/ai";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item,setIsOpenCart }) => {
   const dispatch = useDispatch();
   const handlerDeleteCartItem = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -46,12 +46,23 @@ const CartItem = ({ item }) => {
   };
   return (
     <CartItemContainer>
-      <CartImgContainer href={`/product/${item.id}`}>
-        <CartImg src={Array.isArray(item.image)? item.image[0]: item.image} alt={item.title} />
+      <CartImgContainer
+        to={`/product/${item.id}`}
+        onClick={() => setIsOpenCart(false)}
+      >
+        <CartImg
+          src={Array.isArray(item.image) ? item.image[0] : item.image}
+          alt={item.title}
+        />
       </CartImgContainer>
       <CardWrapper>
         <CartBody>
-          <ProductTitle href={`/product/${item.id}`}>{item.title}</ProductTitle>
+          <ProductTitle
+            to={`/product/${item.id}`}
+            onClick={() => setIsOpenCart(false)}
+          >
+            {item.title}
+          </ProductTitle>
           <ProductPrice>
             {item.cartQuantity} x <span>${item.price}</span>
           </ProductPrice>

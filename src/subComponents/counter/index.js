@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CounterContainer = styled.div`
+  max-width: 106px;
   margin: 0.5rem 0;
   display: inline-block;
   background-color: ${(props) =>
@@ -21,7 +22,8 @@ ${(props) =>
 export const BtnContainer = styled.div`
   ${(props) => props.productDetail && "border : 1px solid rgb(255, 112, 4)"};
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+
   flex-direction: row;
 `;
 export const ControlBtn = styled.button`

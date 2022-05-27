@@ -108,7 +108,7 @@ const ProductDescription = ({ ItemsDetail }) => {
       <div className="col-md-6 col-lg-5">
         <CarouselListProductDetails img={ItemsDetail.image} />
       </div>
-      <div className="col-md-6 col-lg-7">
+      <div className="col-md-6 col-lg-7 pl-2r">
         <ProductDescriptionTop>
           <p>
             SKU : <span>{ItemsDetail.category}</span>

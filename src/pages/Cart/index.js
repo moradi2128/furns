@@ -75,7 +75,6 @@ export const ListBody = styled.div`
         align-items: center;
         justify-content: space-around;
         width: 100%;
-        gap: 3rem;
       }
     }
   }
@@ -104,6 +103,7 @@ export const ListBody = styled.div`
 
   .action-btn {
     justify-content: center;
+    align-items: center;
     display: flex;
     color: rgb(71, 71, 71);
     font-size: large;
@@ -130,7 +130,7 @@ export const ListBody = styled.div`
     display: flex;
     justify-content: center;
     color: rgb(255, 112, 4);
-    font-family: Raleway;
+    font-family: Raleway, "Montserrat", sans-serif;
 
     span {
       margin-left: 40px;
@@ -233,6 +233,10 @@ export const BtnCheckoutContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    gap: 0;
+  }
   button {
     font-size: 12px;
     justify-content: center;

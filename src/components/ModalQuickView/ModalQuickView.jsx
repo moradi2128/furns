@@ -28,7 +28,7 @@ const ModalQuickView = () => {
           <CloseIconContainer onClick={() => handlerCloseModal()}>
             <CloseIcon ModalQuickView />
           </CloseIconContainer>
-          <ProductBody>
+          <ProductBody ItemsDetail={quickViewItem}>
             <ProductDescription ItemsDetail={quickViewItem} />
           </ProductBody>
         </ModalContact>

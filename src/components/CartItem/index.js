@@ -5,7 +5,7 @@ export const CartItemContainer = styled.div`
   padding: 1rem;
   border-bottom: 1px solid rgb(235, 235, 235);
 `;
-export const CartImgContainer = styled.a`
+export const CartImgContainer = styled(Link)`
   width: 100px;
   height: 120px;
   overflow: hidden;
@@ -18,8 +18,11 @@ export const CartImg = styled.img`
 
 export const CartBody = styled.div`
   margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
-export const ProductTitle = styled.a`
+export const ProductTitle = styled(Link)`
   display: block;
   font-weight: 400;
   font-size: 14px;

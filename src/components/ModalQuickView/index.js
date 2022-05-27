@@ -75,6 +75,7 @@ export const CloseIconContainer = styled.button`
   background-color: rgb(255, 112, 4);
 `;
 export const ProductBody = styled.div`
-  overflow: hidden auto;
+  overflow: ${(state) =>
+    Array.isArray(state.ItemsDetail.image) ? "hidden auto" : "hidden"};
   height: 100%;
 `;

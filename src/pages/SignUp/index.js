@@ -63,14 +63,20 @@ export const Form = styled.form`
       color: rgb(255, 112, 4) !important;
     }
   }
+
   button:disabled {
-    cursor: unset ;
-    color: white ;
-    background: rgb(255 159 86) ;
+    cursor: unset;
+    color: white;
+    background: rgb(255 159 86);
   }
   @media screen and (max-width: 575px) {
      {
       padding: 30px 20px;
+    }
+  }
+  @media screen and (max-width: 374px) {
+    a:last-child {
+      font-size: small;
     }
   }
 `;

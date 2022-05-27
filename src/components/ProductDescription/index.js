@@ -4,6 +4,9 @@ import styled from "styled-components";
 export const DescriptionBox = styled.div`
   display: flex;
   flex-direction: column;
+  & .pl-2r {
+    padding: 2rem;
+  }
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 1.5rem;

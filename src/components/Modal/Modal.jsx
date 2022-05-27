@@ -1,6 +1,6 @@
 import React from "react";
 // === Components ===
-import CloseIcon  from "../../subComponents/CloseIcon/CloseIcon";
+import CloseIcon from "../../subComponents/CloseIcon/CloseIcon";
 
 // === Styled Components ===
 import {

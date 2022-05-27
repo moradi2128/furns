@@ -20,6 +20,7 @@ export const Item = styled(Link)`
   }
   h4 {
     font-weight: 400;
+    font-size: small;
   }
   &:hover {
     color: inherit;
@@ -52,6 +53,9 @@ export const Item = styled(Link)`
      {
       width: 140px;
       height: 140px;
+      h4 {
+        font-size: unset;
+      }
     }
   }
   @media screen and (min-width: 767px) {

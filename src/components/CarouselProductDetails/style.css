@@ -19,6 +19,9 @@
   height: 100%;
   object-fit: cover;
 }
+.w-unset {
+  width: unset !important;
+}
 .productDetails .swiper-slide figure {
   position: relative;
   width: 100%;
@@ -45,19 +48,20 @@
 
 .mySwipeProduct .swiper-slide {
   width: 25%;
-  height: 100%;
+  height: min-content;
   opacity: 0.4;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .mySwipeProduct .swiper-slide-thumb-active {
   opacity: 1;
+  outline: 1px solid rgb(255, 112, 4) !important;
+  outline-offset: -2px;
 }
 
-/* === Active slide  === */
+/* === Active slide  ===
 .mySwiper .swiper-slide-thumb-active {
-  border: 1px solid rgb(255, 112, 4);
-}
+} */
 /* swiper pagination bullet */
 .productDetails .swiper-pagination-bullet {
   cursor: pointer;

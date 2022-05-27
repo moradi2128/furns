@@ -16,7 +16,7 @@ const CartModal = ({setIsOpenCart}) => {
           </WrapperEmpty>
         ) : (
           cartItems.map((item) => {
-            return <CartItem item={item} />;
+            return <CartItem item={item} setIsOpenCart={setIsOpenCart}/>;
           })
         )}
       </ChartList>

@@ -3,6 +3,11 @@ export const Card = styled.article`
   width: 100%;
   position: relative;
   background-color: rgb(244, 245, 248);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
 `;
 export const CardHeader = styled.div``;
 export const CardBody = styled.div`
@@ -55,7 +60,7 @@ export const CardAuthor = styled.div`
   gap: 0.4rem;
   a {
     color: rgb(71, 71, 71);
-    margin-right:1rem;
+    margin-right: 1rem;
   }
   a:hover {
     color: rgb(255, 112, 4);
